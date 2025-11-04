@@ -6,6 +6,7 @@ import TaskList from "./components/TaskList";
 import TaskFilter from "./components/TaskFilter";
 import API from "./services/api";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { BsCardHeading } from "react-icons/bs";
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -58,10 +59,10 @@ function App() {
 
   return (
     <Layout style={{ minHeight: "100vh", padding: 20 }}>
-      <Header style={{ background: "#fff", height:"fit-content" , padding:20, marginInline:20, borderRadius:10}}>
-        <Title level={2} style={{margin:0, fontSize:25, textAlign:"left"}}>Task Management</Title>
+      <Header style={{ background: "#fff", height:"fit-content" , marginBottom:20, padding:20, borderRadius:10}}>
+        <Title level={2} style={{margin:0, fontSize:25, textAlign:"left", display:"flex", alignItems:"center", gap:"10px"}}><BsCardHeading />Task Management</Title>
       </Header>
-      <Content style={{ padding: 20 }}>
+      <Content>
         <div className="task-controls">
           <TaskFilter filter={filter} setFilter={setFilter} />
           <Button type="primary" onClick={() => { setEditingTask(null); setIsModalVisible(true); }}>
